@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     # def twoSum(self, nums: List[int], target: int) -> List[int]:
     #     result = None
@@ -10,7 +13,7 @@ class Solution:
     #     return result
 
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        results = dict()
+        results = dict() # for finding unique index number
 
         for i, num in enumerate(nums):
             result = target - num
