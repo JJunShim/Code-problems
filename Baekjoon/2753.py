@@ -1,6 +1,3 @@
 # 윤년
 a = int(input())
-if not a % 4 and (a % 100 or not a % 400):
-    print(1)
-else:
-    print(0)
+print(1 if not a % 4 and (a % 100 or not a % 400) else 0)
