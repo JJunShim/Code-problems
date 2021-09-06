@@ -1,6 +1,4 @@
 # 곱셈
 a = int(input())
 b = input()
-for n in reversed(b):
-    print(a * int(n))
-print(a * int(b))
+print(*(a * int(n) for n in b[::-1]), a * int(b))
