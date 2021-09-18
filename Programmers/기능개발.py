@@ -3,7 +3,7 @@ def distribute(progress: int, speed: int):
         quotient, remainder = divmod(100 - progress, speed)
     except:
         return 0
-    return quotient + 1 if remainder else quotient
+    return quotient + bool(remainder)
 
 
 def solution(progresses: list, speeds: list):
