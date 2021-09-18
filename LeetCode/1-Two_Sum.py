@@ -13,7 +13,7 @@ class Solution:
     #     return result
 
     def twoSum(self, nums: List[int], target: int) -> List[int]:
-        results = dict() # for finding unique index number
+        results = dict()  # for finding unique index number
 
         for i, num in enumerate(nums):
             result = target - num
