@@ -1,5 +1,4 @@
-def solution(numbers, target):
-    answer = 0
+def solution(numbers: list, target: int) -> int:
     leaves = [0]
     for num in numbers:
         tmp = []
@@ -7,5 +6,5 @@ def solution(numbers, target):
             tmp.append(parent + num)
             tmp.append(parent - num)
         leaves = tmp
-    answer = sum(leaf == target for leaf in leaves)
+    answer = leaves.count(target)
     return answer
