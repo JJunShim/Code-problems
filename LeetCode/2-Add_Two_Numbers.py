@@ -18,7 +18,6 @@ class Solution:
                 l2 = l2.next
 
             carry, n = divmod(carry, 10)
-
             cur.next = ListNode(n)
             cur = cur.next
 
