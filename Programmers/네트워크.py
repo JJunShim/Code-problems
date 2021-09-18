@@ -1,16 +1,15 @@
-def dfs(node, computers, visited):
+def dfs(node: int, computers: list, visited: list) -> list:
     visited[node] = True
     for i, neighbor in enumerate(computers[node]):
-        if not visited[i] and neighbor and i != node:
+        if not visited[i] and i != node and neighbor:
             visited = dfs(i, computers, visited)
     return visited
 
 
-def solution(n, computers):
-    answer, node = [0] * 2
+def solution(n: int, computers: list) -> int:
     visited = [False] * n
+    answer = 0
     while not all(visited):
-        node = visited.index(False)
+        visited = dfs(visited.index(False), computers, visited)
         answer += 1
-        visited = dfs(node, computers, visited)
     return answer
