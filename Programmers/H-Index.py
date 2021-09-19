@@ -1,6 +1,6 @@
-def solution(citations: list):
+def solution(citations: list) -> int:
     citations.sort()
     answer = len(citations)
-    while len([_ for _ in citations if _ >= answer]) < answer:
+    while sum(_ >= answer for _ in citations) < answer:
         answer -= 1
     return answer
