@@ -1,16 +1,18 @@
-def solution(participant, completion):
-    d = {hash(_): _ for _ in participant}
-    def f(x): return sum(map(hash, x))
-    return d[f(participant) - f(completion)]
+def hash_sum(x: list) -> int:
+    return sum(map(hash, x))
 
 
-def solution(participant: list, completion: list):
-    answer = ''
+def solution(participant: list, completion: list) -> str:
+    dic = {hash(_): _ for _ in participant}
+    key = hash_sum(participant) - hash_sum(completion)
+    return dic.get(key)
+
+
+def solution(participant: list, completion: list) -> str:
     part, comp = map(sorted, (participant, completion))
+    answer = part[-1]
     for p, c in zip(part, comp):
         if p != c:
             answer = p
             break
-    else:
-        answer = part[-1]
     return answer
