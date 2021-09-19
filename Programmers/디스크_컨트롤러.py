@@ -2,7 +2,7 @@ import heapq
 
 
 def solution(jobs: list) -> int:
-    answer, now, i = (0, ) * 3
+    answer, now, i = [0] * 3
     start = -1
     heap = []
     while i < len(jobs):
