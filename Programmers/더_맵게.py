@@ -1,22 +1,15 @@
 import heapq
 
 
-def mixing(first, second):
-    return first + second * 2
-
-
-def solution(scoville: list, K: int):
-    heap = []
-    for n in scoville:
-        heapq.heappush(heap, n)
+def solution(scoville: list, K: int) -> int:
+    heapq.heapify(scoville)
+    mixed = heapq.heappop(scoville)
     answer = 0
-    a = heapq.heappop(heap)
-    while a < K:
+    while mixed < K:
         try:
-            mixed = mixing(a, heapq.heappop(heap))
+            mixed += heapq.heappop(scoville) * 2
         except:
             return -1
-        else:
-            a = heapq.heappushpop(heap, mixed)
+        mixed = heapq.heappushpop(scoville, mixed)
         answer += 1
     return answer
