@@ -1,2 +1,2 @@
 # A+B - 3
-print(*(sum(map(int, input().split())) for _ in range(int(input()))))
+print(*(sum(int(_) for _ in input().split()) for _ in range(int(input()))))
