@@ -1,8 +1,8 @@
 # A+B - 4
+import sys
 while True:
     try:
-        a, b = map(int, input().split())
+        a, b = map(int, sys.stdin.readline().split())
     except:
         break
-    else:
-        print(a + b)
+    print(a + b)
