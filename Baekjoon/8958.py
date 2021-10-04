@@ -1,5 +1,4 @@
 # OX퀴즈
-from sys import stdin
-_ = input()
-print(*(sum((sum(range(1, len(i)+1)) for i in l.strip().split(sep='X')))
-      for l in stdin))
+for _ in range(int(input())):
+    l = input().split(sep='X')
+    print(sum(sum(range(1, len(s) + 1)) for s in l))
