@@ -1,5 +1,6 @@
 # 평균은 넘겠지
 for _ in range(int(input())):
-    n, *a = [int(_) for _ in input().split()]
+    n, *a = (int(x) for x in input().split())
     m = sum(a) / n
-    print(f'{len([_ for _ in a if _ > m]) / n * 100:.3f}%')
+    m = sum(x > m for x in a) / n
+    print(f'{m * 100:.3f}%')
