@@ -1,8 +1,8 @@
 # 설탕 배달
 n = int(input())
-q, r = [0] * 2
-for i in range(n // 5, -1, -1):
-    q, r = divmod(n - 5 * i, 3)
+q, r = divmod(n, 5)
+for i in range(q, -1, -1):
+    q, r = divmod(n - i * 5, 3)
     if not r:
         q += i
         break
