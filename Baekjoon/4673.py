@@ -1,16 +1,19 @@
 # 셀프 넘버
-def solve(num: int) -> int:
-    result = num
-    while num:
-        num, s = divmod(num, 10)
-        result += s
-    return result
+def f(x):
+    q = x + 1
+    while q:
+        q, r = divmod(q, 10)
+        x += r
+    return x
 
 
-a = list(range(10000))
-for i in range(10000):
+l = 10000
+a = [True] * l
+for i in range(l):
     try:
-        a[solve(i)] = None
+        a[f(i)] = False
     except:
-        pass
-print(*(_ for _ in a if _))
+        continue
+for i, _ in enumerate(a, 1):
+    if _:
+        print(i)
