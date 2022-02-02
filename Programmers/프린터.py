@@ -7,9 +7,9 @@ def solution(priorities: list, location: int) -> int:
                 break
             location += len(priorities)
         temp = priorities.pop(0)
-        if temp != maxvalue:
-            priorities.append(temp)
-        else:
+        if temp == maxvalue:
             answer += 1
+        else:
+            priorities.append(temp)
         location -= 1
     return answer
